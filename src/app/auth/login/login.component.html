@@ -1,0 +1,20 @@
+<app-toolbar></app-toolbar>
+<div class="card-wrapper">
+    <mat-card>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+            <form class="w-full" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <ng-container>
+                    <mat-form-field class="w-full">
+                        <input matInput type="text" placeholder="User Name" formControlName="username" required (keyup)="getValue('username')">
+                    </mat-form-field>
+
+                    <mat-form-field class="w-full mt-28">
+                        <input matInput type="password" placeholder="Password" formControlName="password" required (keyup)="getValue('password')">
+                    </mat-form-field>
+                </ng-container>
+                <button mat-raised-button color="primary" class = "w-full" type="submit" [disabled]="!loginForm.valid">Login Button</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
