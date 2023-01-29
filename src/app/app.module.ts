@@ -3,12 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-// import { MatButtonModule } from '@angular/material/button';
-// import { MatCardModule } from '@angular/material/card';
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatInputModule } from '@angular/material/input';
-// import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -46,8 +40,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { TextFieldModule } from '@angular/cdk/text-field';
 
-
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
@@ -64,12 +56,6 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    // MatButtonModule,
-    // MatCardModule,
-    // MatFormFieldModule,
-    // MatIconModule,
-    // MatInputModule,
-    // MatToolbarModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatButtonModule,
