@@ -1,6 +1,6 @@
 mat-card {
     width: 400px;
-    height: 300px;
+    height: 350px;
     font-family: Roboto;
     text-align: center;
 }
@@ -17,11 +17,62 @@ mat-card {
 form {
     padding: 50px 0;
 
-    >button {
+    button {
         margin-top: 40px;
     }
 }
 
 .w-full {
     width: 100% !important;
+}
+
+.icon-tooltip {
+    margin-top: -14px;
+    margin-left: -30px;
+    color: red;
+}
+
+.tooltip-content {
+    display: none;
+}
+
+.icon-tooltip:hover .tooltip-content {
+    display: block;
+}
+
+.tooltip-content {
+    width: 280px;
+    border-radius: 6px;
+    position: fixed;
+    background-color:rgb(245, 245, 245);
+    z-index: 1;
+}
+
+.tooltip-content {
+    .rule {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 10px;
+
+        span {
+            padding-left: 5px;
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+        }
+    }
+
+    .mat-icon {
+        font-size: 16px;
+        margin-top: 7px;
+    }
+
+    .valid {
+        color: green;
+    }
+
+    .invalid {
+        color: red;
+    }
 }

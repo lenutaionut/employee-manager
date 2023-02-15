@@ -1,0 +1,12 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container *ngFor="let col of columns" [matColumnDef]="col.columnDef">
+    <mat-header-cell mat-header-cell *matHeaderCellDef>
+      {{col.header}}
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{element[col.columnDef]}}
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

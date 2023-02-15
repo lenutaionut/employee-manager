@@ -1,20 +1,58 @@
-<app-toolbar></app-toolbar>
 <div class="card-wrapper">
     <mat-card>
-        <mat-card-title>Login</mat-card-title>
-        <mat-card-content>
-            <form class="w-full" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <form class="w-full" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-card-title>Login</mat-card-title>
+            <mat-card-content>
                 <ng-container>
                     <mat-form-field class="w-full">
-                        <input matInput type="text" placeholder="User Name" formControlName="username" required (keyup)="getValue('username')">
+                        <input matInput type="text" placeholder="User Name" formControlName="username" required>
+                        <mat-error *ngIf="loginForm.get('username')?.invalid">Field is required</mat-error>
                     </mat-form-field>
-
-                    <mat-form-field class="w-full mt-28">
-                        <input matInput type="password" placeholder="Password" formControlName="password" required (keyup)="getValue('password')">
+                    <mat-form-field class="w-full">
+                        <input matInput type="password" placeholder="Password" formControlName="password" required>
+                        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Field is required</mat-error>
+                        <mat-icon class="icon-tooltip"
+                            *ngIf="!loginForm.get('password')?.hasError('required') && loginForm.get('password')?.invalid && loginForm.get('password')?.dirty">
+                            info_outline
+                            <div class="tooltip-content" *ngTemplateOutlet="tooltipPassword"></div>
+                        </mat-icon>
                     </mat-form-field>
                 </ng-container>
-                <button mat-raised-button color="primary" class = "w-full" type="submit" [disabled]="!loginForm.valid">Login Button</button>
-            </form>
-        </mat-card-content>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" class="w-full" type="submit"
+                    [disabled]="!loginForm.valid" routerLink="/employees/all">Login</button>
+            </mat-card-actions>
+        </form>
     </mat-card>
 </div>
+
+<ng-template #tooltipPassword>
+    <div class="tooltip-content">
+        <div class="rule">
+            <mat-icon class="valid" *ngIf="existsUppercase">check_circle_outline</mat-icon>
+            <mat-icon class="invalid" *ngIf="!existsUppercase">highlight_off</mat-icon>
+            <span>At least one upper-case letter</span>
+        </div>
+        <div class="rule">
+            <mat-icon *ngIf="existsLowercase" class="valid">check_circle_outline</mat-icon>
+            <mat-icon *ngIf="!existsLowercase" class="invalid">highlight_off</mat-icon>
+            <span>At least one lower-case letter</span>
+        </div>
+        <div class="rule">
+            <mat-icon *ngIf="existsSpecialChar" class="valid">check_circle_outline</mat-icon>
+            <mat-icon *ngIf="!existsSpecialChar" class="invalid">highlight_off</mat-icon>
+            <span>At least one special character</span>
+        </div>
+        <div class="rule">
+            <mat-icon class="valid" *ngIf="existsDigit">check_circle_outline</mat-icon>
+            <mat-icon class="invalid" *ngIf="!existsDigit">highlight_off</mat-icon>
+            <span>At least one number</span>
+        </div>
+        <div class="rule">
+            <mat-icon class="valid" *ngIf="validLength">check_circle_outline</mat-icon>
+            <mat-icon class="invalid" *ngIf="!validLength">highlight_off</mat-icon>
+            <span>Length of at least 12 chars</span>
+        </div>
+    </div>
+</ng-template>
