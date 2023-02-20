@@ -11,7 +11,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { MaterialModule } from './modules/material.module';
+import { MaterialModule } from './shared-modules/material.module';
 
 @NgModule({
   declarations: [

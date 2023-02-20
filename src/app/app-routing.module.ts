@@ -5,7 +5,7 @@ import { LoginComponent } from './auth/login/login.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: 'employees',
     loadChildren: () =>
-      import('./components/employees/employees.module').then(m => m.EmployeesModule)
+      import('./employees/employees.module').then(m => m.EmployeesModule)
   }
 ];
 
