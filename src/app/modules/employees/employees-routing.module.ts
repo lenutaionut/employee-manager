@@ -9,7 +9,7 @@ const routes: Routes = [{
     {
       path: 'new-hires',
       loadChildren: () =>
-        import('src/app/employees/tabs/new-hires/new-hires.module').then((m) => m.NewHiresModule),
+        import('./tabs/new-hires/new-hires.module').then((m) => m.NewHiresModule),
     },
     {
       path: 'all',

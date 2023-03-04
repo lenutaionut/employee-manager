@@ -1,3 +1,14 @@
-mat-table {
-    margin: 10px;
+.table-wrapper {
+    height: calc(100vh - 190px);
+    overflow: auto;
+
+    mat-table {
+        margin: 10px;
+    }
+
+    mat-cell {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 14 px;
+    }
+
 }

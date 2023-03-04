@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITabs } from './constants/tabs';
+import { ITabs } from 'src/app/model/tabs';
 
 @Component({
   selector: 'app-employees',
@@ -8,9 +8,11 @@ import { ITabs } from './constants/tabs';
 })
 export class EmployeesComponent implements OnInit {
 
-  tabs: ITabs[] = [] ;
+  tabs: ITabs[] = [];
 
-  constructor() {
+  constructor() { }
+
+  ngOnInit(): void {
     this.tabs = [
       { title: 'New Hires', path: 'new-hires' },
       { title: 'All employees', path: 'all' },
@@ -21,8 +23,4 @@ export class EmployeesComponent implements OnInit {
       { title: 'Internship', path: 'internship' }
     ]
   }
-
-  ngOnInit(): void {
-  }
-
 }

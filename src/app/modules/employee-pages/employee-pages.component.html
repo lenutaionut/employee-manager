@@ -1,0 +1,23 @@
+<mat-tab-group [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChange($event)">
+    <mat-tab label="New Hires">
+        <app-common-table [columns]="newHiresColumns" [tableData]="newHiresData"></app-common-table>
+    </mat-tab>
+    <mat-tab label="All Employees">
+        <app-common-table [columns]="allEmployeesColumns" [tableData]="allEmployeesData"></app-common-table>
+    </mat-tab>
+    <mat-tab label="Contractor">
+        <app-common-table [columns]="contractorColumns" [tableData]="contractorData"></app-common-table>
+    </mat-tab>
+    <mat-tab label="Permanent Employees">
+        <app-common-table [columns]="permanentEmployeesColumns" [tableData]="permanentEmployeesData"></app-common-table>
+    </mat-tab>
+    <mat-tab label="Employees close to retirement">
+        <app-common-table [columns]="closeToRetirementColumns" [tableData]="closeToRetirementData"></app-common-table>
+    </mat-tab>
+    <mat-tab label="Former Employees">
+        <app-common-table [columns]="formerEmployeesColumns" [tableData]="formerEmployeesData"></app-common-table>
+    </mat-tab>
+    <mat-tab label="Internship">
+        <app-common-table [columns]="internshipColumns" [tableData]="internshipData"></app-common-table>
+    </mat-tab>
+</mat-tab-group>

@@ -12,12 +12,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MaterialModule } from './shared-modules/material.module';
+import { EmployeePagesComponent } from './modules/employee-pages/employee-pages.component';
+import { CommonTableModule } from './shared-modules/common-table/common-table.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    EmployeePagesComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { MaterialModule } from './shared-modules/material.module';
     FlexLayoutModule,
     TextFieldModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    CommonTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
