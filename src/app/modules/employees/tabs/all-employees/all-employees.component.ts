@@ -20,8 +20,6 @@ export class AllEmployeesComponent implements OnInit {
   ngOnInit(): void {
     this.tableData = this.employeesService.getAllEmployees()
       .filter(employee => this.employeesService.formatStatus(employee.col_status) !== STATUS.TERMINATED);
-
-      this.employeesService.test = 'test'
   }
 
 }

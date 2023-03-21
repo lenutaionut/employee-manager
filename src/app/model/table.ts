@@ -10,7 +10,7 @@ export interface ITableData {
     col_phone: string,
     col_role: ROLE,
     col_firstJoined: string,
-    col_vacation?: string,
+    col_vacation?: any,
     col_department: string,
     col_type: TYPE,
     col_status: STATUS,
@@ -23,7 +23,9 @@ export interface ITableData {
     col_reason?: string,
     col_mentor?: string,
     col_startEndDate?: string,
-    col_review?: string
+    col_review?: string,
+    col_supervisor?: string,
+    vacation_tooltip?: any
 }
 
 export interface ITableDataPermanent extends ITableData {
@@ -43,10 +45,9 @@ export interface Contractor {
     contract: string
 }
 
-export interface Internship {
-    mentor: string;
-    startDate: Date;
-    endDate: Date;
+export interface Vacation {
+    startDate: string;
+    endDate: string;
 }
 
 export enum TYPE {
@@ -67,4 +68,11 @@ export enum ROLE {
     QA = 'QA Engineer',
     PO = 'Product Owner',
     PM = 'Project Manager'
+}
+
+export enum DEPARTMENT {
+    DEVELOPMENT = 'Development',
+    TEST = 'Testing',
+    MANAGEMENT = 'Management',
+    CEO = 'CEO'
 }

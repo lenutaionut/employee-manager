@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/cor
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { ITableColumns, ITableData } from '../../model/table';
+import { DEPARTMENT, ITableColumns, ITableData, ROLE } from '../../model/table';
 
 @Component({
   selector: 'app-common-table',
@@ -22,11 +22,12 @@ export class CommonTableComponent implements OnInit, AfterViewInit {
 
   dataSource = new MatTableDataSource<ITableData>([]);
   displayedColumns?: string[];
+  ROLE = ROLE;
+  DEPARTMENT = DEPARTMENT;
 
   constructor() { }
 
   ngOnInit(): void {
-
     this.displayedColumns = this.columns?.map((col: ITableColumns) => col.columnDef)
     this.dataSource = new MatTableDataSource(this.tableData)
   }

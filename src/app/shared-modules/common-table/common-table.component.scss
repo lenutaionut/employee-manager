@@ -1,14 +1,70 @@
+.main-page{
+    height: calc(100vh - 130px);
+}
 .table-wrapper {
     height: calc(100vh - 190px);
-    overflow: auto;
+    overflow-x: auto;
 
     mat-table {
         margin: 10px;
+        width: 100%;
+        display: table;
+    }
+
+    mat-header-cell,
+    mat-cell {
+        min-width: 150px;
     }
 
     mat-cell {
         font-family: 'Times New Roman', Times, serif;
-        font-size: 14 px;
-    }
+        font-size: 14px;
 
+        span {
+            &.cell-border {
+                padding: 2px 6px;
+                border-radius: 8px;
+            }
+
+            &.ceo {
+                background-color: rgb(243, 0, 0);
+            }
+
+            &.teamLead {
+                background-color: rgb(17, 174, 236);
+            }
+
+            &.dev {
+                background-color: rgb(120, 218, 29);
+            }
+
+            &.qa {
+                background-color: rgb(255, 187, 0);
+            }
+
+            &.po {
+                background-color: rgb(174, 0, 255);
+            }
+
+            &.pm {
+                background-color: rgb(74, 231, 223);
+            }
+
+            &.test {
+                background-color: rgb(231, 181, 74);
+            }
+
+            &.mng {
+                background-color: rgb(14, 177, 169);
+            }
+
+            &.develop {
+                background-color: rgb(20, 167, 7);
+            }
+        }
+    }
+}
+
+mat-paginator {
+    height: 50px;
 }

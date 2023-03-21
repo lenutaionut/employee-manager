@@ -14,6 +14,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MaterialModule } from './shared-modules/material.module';
 import { EmployeePagesComponent } from './modules/employee-pages/employee-pages.component';
 import { CommonTableModule } from './shared-modules/common-table/common-table.module';
+import { EmployeesDataService } from './services/employees-data.service';
+import { EmployeesService } from './services/employees.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { CommonTableModule } from './shared-modules/common-table/common-table.mo
     MaterialModule,
     CommonTableModule
   ],
-  providers: [],
+  providers: [EmployeesDataService, EmployeesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

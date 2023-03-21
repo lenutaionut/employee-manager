@@ -28,7 +28,6 @@ export class ContractorComponent implements OnInit {
     .filter(employee => 
       this.employeesService.formatType(employee.col_type) === TYPE.CONTRACTOR);
 
-      console.log(this.employeesService.test)
   }
 
 }

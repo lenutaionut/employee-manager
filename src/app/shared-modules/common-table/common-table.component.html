@@ -1,17 +1,31 @@
-<div class="table-wrapper">
-  <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
-    <ng-container *ngFor="let col of columns" [matColumnDef]="col.columnDef">
-      <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>
-        {{col.header}}
-      </mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        {{element[col.columnDef]}}
-      </mat-cell>
-    </ng-container>
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
-</div>
-<div>
-  <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25]" aria-label="Select page of elements"></mat-paginator>
-</div>
+<div class="main-page">
+  <div class="table-wrapper">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <ng-container *ngFor="let col of columns" [matColumnDef]="col.columnDef">
+        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{col.header}}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <span class="cell-border" 
+                [matTooltip]="col.columnDef === 'col_vacation' ? element.vacation_tooltip : ''" 
+                [ngClass]="{ceo: element[col.columnDef] === ROLE.CEO,
+                            teamLead: element[col.columnDef] === ROLE.TEAM_LEAD,
+                            dev: element[col.columnDef] === ROLE.DEV,
+                            qa: element[col.columnDef] === ROLE.QA,
+                            po: element[col.columnDef] === ROLE.PO,
+                            pm: element[col.columnDef] === ROLE.PM,
+                            test: element[col.columnDef] === DEPARTMENT.TEST, 
+                            mng: element[col.columnDef] === DEPARTMENT.MANAGEMENT,
+                            develop: element[col.columnDef] === DEPARTMENT.DEVELOPMENT}">
+            {{element[col.columnDef]}}
+          </span>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  <div>
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25]" aria-label="Select page of elements"></mat-paginator>
+  </div>
+  <div> 
