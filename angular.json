@@ -109,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "employee-manager"
+  "defaultProject": "employee-manager",
+  "cli": {
+    "analytics": false
+  }
 }

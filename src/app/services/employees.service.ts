@@ -76,7 +76,7 @@ export class EmployeesService {
 
         const lastDate = sortedVacation[sortedVacation.length - 1];
         const formattedVacation = `${lastDate.startDate} - ${lastDate.endDate}`;
-        vacation.forEach((item) => { tooltip =  tooltip.concat(`${item.startDate} - ${item.endDate}; \n\n`) });
+        vacation.forEach((item) => { tooltip =  tooltip.concat(`${item.startDate} - ${item.endDate}; \n`) });
         console.log(tooltip)
 
         return { formattedVacation, tooltip }
